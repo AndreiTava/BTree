@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 
-
+/*Inline Methods, Bad Practice, might fix... maybe*/
 template<class type, int order>
 class BTree
 {
@@ -675,67 +675,14 @@ const typename BTree<type, order>::iterator BTree<type, order>::irend(nullptr, -
 
 int main()
 {
-	// std::ifstream in("abce.in");
-	// std::ofstream out("abce.out");
-	/*int nr_op, cmd, param1, param2;
-
-	in >> nr_op;
-	for (int i = 0; i < nr_op; ++i)
-	{
-		in >> cmd;
-		switch (cmd)
-		{
-		case 1:
-		{
-			in >> param1;
-			tree.insert(param1);
-			break;
-		}
-		case 2:
-		{
-			in >> param1;
-			tree.remove(param1);
-			break;
-		}
-		case 3:
-		{
-			in >> param1;
-			out << tree.search(param1) << "\n";
-			break;
-		}
-		case 4:
-		{
-			in >> param1;
-			out << tree.predecessor(param1) << "\n";
-			break;
-		}
-		case 5:
-		{
-			in >> param1;
-			out << tree.successor(param1) << "\n";
-			break;
-		}
-		case 6:
-		{
-			in >> param1 >> param2;
-			tree.printRange(param1, param2, out);
-			break;
-		}
-
-		}
-		
-	}
-	in.close();
-	out.close();*/
-
-	BTree<int*, 5> tree;
-	int x=20, y=15, z=33, w=-15;
-	tree.insert(&w);
-	tree.insert(&x);
-	tree.insert(&y);
-	tree.insert(&z);
+	
+	BTree<double, 5> tree;
+	tree.insert(56.34);
+	tree.insert(0);
+	tree.insert(0.1);
+	tree.insert(42.42);
 
 	for (const auto i : tree)
-		std::cout << *i << " ";		
+		std::cout << i << " ";		
 }
 
